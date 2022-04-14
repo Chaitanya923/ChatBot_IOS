@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="BotCell" rowHeight="125" id="KGk-i7-Jjw" customClass="BotTableViewCell" customModule="Chatbot" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="420" height="125"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="420" height="125"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y9D-oL-pGp">
+                        <rect key="frame" x="10" y="10" width="360" height="105"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bLa-u9-kEC">
+                                <rect key="frame" x="5" y="5" width="345" height="80"/>
+                                <string key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ligula augue, egestas sed pellentesque vitae, fringilla eget turpis. Suspendisse ac ultrices urna, ut sollicitudin lacus.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5 min ago" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lte-Px-0Zz">
+                                <rect key="frame" x="295" y="85" width="60" height="15"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="15" id="Niw-Vg-d2u"/>
+                                    <constraint firstAttribute="width" constant="60" id="a0J-eP-uPb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Lte-Px-0Zz" firstAttribute="top" secondItem="bLa-u9-kEC" secondAttribute="bottom" id="Ow4-n8-S1X"/>
+                            <constraint firstItem="bLa-u9-kEC" firstAttribute="top" secondItem="Y9D-oL-pGp" secondAttribute="top" constant="5" id="ZzT-XB-Wlz"/>
+                            <constraint firstAttribute="trailing" secondItem="Lte-Px-0Zz" secondAttribute="trailing" constant="5" id="diZ-Q7-ClQ"/>
+                            <constraint firstAttribute="trailing" secondItem="bLa-u9-kEC" secondAttribute="trailing" constant="10" id="hLY-df-Y0F"/>
+                            <constraint firstAttribute="bottom" secondItem="Lte-Px-0Zz" secondAttribute="bottom" constant="5" id="mGA-xb-UjQ"/>
+                            <constraint firstItem="bLa-u9-kEC" firstAttribute="leading" secondItem="Y9D-oL-pGp" secondAttribute="leading" constant="5" id="tmH-ci-O0F"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="Y9D-oL-pGp" secondAttribute="bottom" constant="10" id="F9J-kU-tV6"/>
+                    <constraint firstItem="Y9D-oL-pGp" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="VdV-dF-dV4"/>
+                    <constraint firstItem="Y9D-oL-pGp" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="VfS-po-KL3"/>
+                    <constraint firstAttribute="trailing" secondItem="Y9D-oL-pGp" secondAttribute="trailing" constant="50" id="cL9-pM-3Gl"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" systemColor="systemGray4Color"/>
+            <connections>
+                <outlet property="mainview" destination="Y9D-oL-pGp" id="zon-Db-T3p"/>
+                <outlet property="message" destination="bLa-u9-kEC" id="RNF-Bg-SMr"/>
+                <outlet property="message_time" destination="Lte-Px-0Zz" id="hYZ-Wq-L40"/>
+            </connections>
+            <point key="canvasLocation" x="149.27536231884059" y="92.745535714285708"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray4Color">
+            <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
