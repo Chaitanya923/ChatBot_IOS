@@ -11,7 +11,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ChatViewController" customModule="Chatbot" customModuleProvider="target">
             <connections>
                 <outlet property="ChatTable" destination="BhV-aq-09u" id="kpr-fy-8wr"/>
-                <outlet property="MessageTextField" destination="mbF-ie-yZI" id="gKp-c7-aVd"/>
+                <outlet property="MessageTextField" destination="1Tj-ne-mth" id="eqA-D1-Z7G"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -28,35 +28,37 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CAx-cJ-E14">
                     <rect key="frame" x="0.0" y="812" width="414" height="50"/>
                     <subviews>
-                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mbF-ie-yZI">
-                            <rect key="frame" x="15" y="4" width="331" height="42.5"/>
-                            <color key="backgroundColor" systemColor="systemGray4Color"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits"/>
-                        </textField>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IVu-gi-wkE">
-                            <rect key="frame" x="361" y="6" width="38" height="38"/>
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="1Tj-ne-mth">
+                            <rect key="frame" x="15" y="10" width="331" height="28"/>
+                            <color key="backgroundColor" systemColor="systemGray3Color"/>
                             <constraints>
-                                <constraint firstAttribute="width" secondItem="IVu-gi-wkE" secondAttribute="height" multiplier="10:10" id="A4g-ge-yII"/>
+                                <constraint firstAttribute="height" constant="28" id="TbS-mT-aU0"/>
                             </constraints>
-                            <state key="normal" image="arrow.right.circle.fill" catalog="system">
-                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
-                            </state>
+                            <mutableString key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ligula augue, egestas sed pellentesque vitae, fringilla eget turpis. Suspendisse ac ultrices urna, ut sollicitudin lacus. Phasellus consectetur viverra massa, eu venenatis eros malesuada vitae. Duis vulputate risus sed nibh mollis, a tempor sapien pharetra. Ut ornare nunc eget ligula cursus pulvinar. Donec iaculis, tortor sit amet mollis viverra, leo nulla consectetur augue, eget vestibulum ex purus nec mauris. Proin et tincidunt sem. Donec vestibulum, augue a congue euismod, mi dolor commodo urna, sagittis fringilla erat mauris et ligula. Curabitur vitae mattis ligula.</mutableString>
+                            <color key="textColor" systemColor="labelColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                        </textView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Y2-Sp-GBS">
+                            <rect key="frame" x="361" y="5" width="38" height="38"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="6Y2-Sp-GBS" secondAttribute="height" multiplier="10:10" id="Iqa-cu-cTJ"/>
+                            </constraints>
+                            <state key="normal" title="Button" image="arrow.right.circle.fill" catalog="system"/>
                             <connections>
-                                <action selector="SendTapped:" destination="-1" eventType="touchUpInside" id="kZB-QJ-fj8"/>
+                                <action selector="SendTapped:" destination="-1" eventType="touchUpInside" id="S7i-8u-f25"/>
                             </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstItem="mbF-ie-yZI" firstAttribute="leading" secondItem="CAx-cJ-E14" secondAttribute="leading" constant="15" id="Aq6-Kp-gSM"/>
+                        <constraint firstItem="1Tj-ne-mth" firstAttribute="top" secondItem="CAx-cJ-E14" secondAttribute="top" constant="10" id="DwT-Ol-xEN"/>
+                        <constraint firstItem="1Tj-ne-mth" firstAttribute="leading" secondItem="CAx-cJ-E14" secondAttribute="leading" constant="15" id="Gct-ga-mqu"/>
+                        <constraint firstAttribute="trailing" secondItem="6Y2-Sp-GBS" secondAttribute="trailing" constant="15" id="MlS-n1-Zqp"/>
                         <constraint firstAttribute="height" constant="50" id="Pdq-cx-Df1"/>
-                        <constraint firstItem="IVu-gi-wkE" firstAttribute="leading" secondItem="mbF-ie-yZI" secondAttribute="trailing" constant="15" id="XEx-gi-ljs"/>
-                        <constraint firstItem="mbF-ie-yZI" firstAttribute="height" secondItem="CAx-cJ-E14" secondAttribute="height" multiplier="0.85" id="big-Bi-dJQ"/>
-                        <constraint firstItem="mbF-ie-yZI" firstAttribute="centerY" secondItem="CAx-cJ-E14" secondAttribute="centerY" id="ebW-nx-Qri"/>
-                        <constraint firstItem="mbF-ie-yZI" firstAttribute="width" secondItem="CAx-cJ-E14" secondAttribute="width" multiplier="0.8" id="faW-Qi-0Iq"/>
-                        <constraint firstItem="IVu-gi-wkE" firstAttribute="centerY" secondItem="mbF-ie-yZI" secondAttribute="centerY" id="x0W-Vk-75M"/>
-                        <constraint firstAttribute="trailing" secondItem="IVu-gi-wkE" secondAttribute="trailing" constant="15" id="zay-Em-1hb"/>
+                        <constraint firstItem="1Tj-ne-mth" firstAttribute="width" secondItem="CAx-cJ-E14" secondAttribute="width" multiplier="0.8" id="Yjz-Cp-mEE"/>
+                        <constraint firstItem="6Y2-Sp-GBS" firstAttribute="leading" secondItem="1Tj-ne-mth" secondAttribute="trailing" constant="15" id="Z83-xL-XLE"/>
+                        <constraint firstItem="6Y2-Sp-GBS" firstAttribute="centerY" secondItem="1Tj-ne-mth" secondAttribute="centerY" id="ts3-hz-sWL"/>
                     </constraints>
                 </view>
             </subviews>
@@ -76,8 +78,14 @@
     </objects>
     <resources>
         <image name="arrow.right.circle.fill" catalog="system" width="128" height="121"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray3Color">
+            <color red="0.7803921568627451" green="0.7803921568627451" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGray4Color">
             <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

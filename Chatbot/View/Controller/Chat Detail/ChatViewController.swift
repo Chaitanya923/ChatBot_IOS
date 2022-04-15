@@ -15,7 +15,7 @@ class ChatViewController: UIViewController {
     
     lazy var viewmodel : ChatDetailViewModel = ChatDetailViewModel()
     
-    @IBOutlet weak var MessageTextField: UITextField!
+    @IBOutlet weak var MessageTextField: UITextView!
     
     static func LoadFromNib(_ botname : String) -> UIViewController{
         Bot_name = botname
@@ -28,7 +28,6 @@ class ChatViewController: UIViewController {
         super.viewDidLoad()
         NavBarSetUp()
         TableData()
-        SetupView()
         BindData()
         
         MessageTextField.layer.cornerRadius = MessageTextField.frame.height/2
@@ -64,9 +63,6 @@ class ChatViewController: UIViewController {
         }
     }
     
-    func  SetupView()  {
-        MessageTextField.layer.cornerRadius = 0
-    }
     
     func NavBarSetUp() {
         title = Bot_name
