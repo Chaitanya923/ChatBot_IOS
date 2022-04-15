@@ -34,7 +34,6 @@
                             <constraints>
                                 <constraint firstAttribute="height" constant="28" id="TbS-mT-aU0"/>
                             </constraints>
-                            <mutableString key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ligula augue, egestas sed pellentesque vitae, fringilla eget turpis. Suspendisse ac ultrices urna, ut sollicitudin lacus. Phasellus consectetur viverra massa, eu venenatis eros malesuada vitae. Duis vulputate risus sed nibh mollis, a tempor sapien pharetra. Ut ornare nunc eget ligula cursus pulvinar. Donec iaculis, tortor sit amet mollis viverra, leo nulla consectetur augue, eget vestibulum ex purus nec mauris. Proin et tincidunt sem. Donec vestibulum, augue a congue euismod, mi dolor commodo urna, sagittis fringilla erat mauris et ligula. Curabitur vitae mattis ligula.</mutableString>
                             <color key="textColor" systemColor="labelColor"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
