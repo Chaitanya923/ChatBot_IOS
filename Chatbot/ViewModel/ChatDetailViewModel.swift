@@ -9,21 +9,28 @@ import UIKit
 import CoreData
 
 class ChatDetailViewModel {
-    
     var status : Observable<Bool> = Observable(false)
-    
     var arraymessage = ["Hello,How are you?","What's Up?","Hey!Take a Break.","Good Day!","Hey!","Yup","Bravo"]
-    
     var fetchedRC1: NSFetchedResultsController<BotDetail>!
     var fetchedRC2: NSFetchedResultsController<ChatMessages>!
     private var appDelegate = UIApplication.shared.delegate as! AppDelegate
     private let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
-    func FetchAndUpdateCoreData(_ t : String) {
+    func saveUserAndBotMessage(_ message: String){
+        fetchAndUpdateCoreData(message)
+        saveMessage(message, false)
+        let num = Int.random(in: 0...6)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [self] in
+            fetchAndUpdateCoreData(arraymessage[num])
+            saveMessage(arraymessage[num], true)
+        }
+    }
+    
+    func fetchAndUpdateCoreData(_ t : String) {
       let request = BotDetail.fetchRequest() as NSFetchRequest<BotDetail>
         let sort = NSSortDescriptor(key: #keyPath(BotDetail.newdate), ascending: false)
           request.sortDescriptors = [sort]
-        request.predicate = NSPredicate(format: "name == %@", Bot_name)
+        request.predicate = NSPredicate(format: "name == %@", botName)
       do {
         fetchedRC1 = NSFetchedResultsController(fetchRequest: request, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
         try fetchedRC1.performFetch()
@@ -35,9 +42,9 @@ class ChatDetailViewModel {
       }
     }
     
-    func FetchFromCoreData() {
+    func fetchFromCoreData() {
         let request = ChatMessages.fetchRequest() as NSFetchRequest<ChatMessages>
-        request.predicate = NSPredicate(format: "botname == %@", Bot_name)
+        request.predicate = NSPredicate(format: "botname == %@", botName)
         let sort = NSSortDescriptor(key: #keyPath(ChatMessages.date), ascending: true)
         request.sortDescriptors = [sort]
           do {
@@ -54,15 +61,15 @@ class ChatDetailViewModel {
         
     }
     
-    func SaveMessage(_ t : String , _ stat : Bool) {
+    func saveMessage(_ t : String , _ stat : Bool) {
         let todo = ChatMessages(context: context)
             
         todo.message = t
-        todo.botname = Bot_name
+        todo.botname = botName
         todo.date = Date()
         todo.frombot = stat
         appDelegate.saveContext()
-        FetchFromCoreData()
+        fetchFromCoreData()
         
     }
 

@@ -18,17 +18,17 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y9D-oL-pGp">
-                        <rect key="frame" x="10" y="10" width="360" height="105"/>
+                        <rect key="frame" x="10" y="10" width="347.5" height="105"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bLa-u9-kEC">
-                                <rect key="frame" x="5" y="5" width="345" height="80"/>
+                                <rect key="frame" x="5" y="5" width="332.5" height="80"/>
                                 <string key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ligula augue, egestas sed pellentesque vitae, fringilla eget turpis. Suspendisse ac ultrices urna, ut sollicitudin lacus.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5 min ago" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lte-Px-0Zz">
-                                <rect key="frame" x="295" y="85" width="60" height="15"/>
+                                <rect key="frame" x="282.5" y="85" width="60" height="15"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="15" id="Niw-Vg-d2u"/>
                                     <constraint firstAttribute="width" constant="60" id="a0J-eP-uPb"/>
@@ -44,6 +44,7 @@
                             <constraint firstItem="bLa-u9-kEC" firstAttribute="top" secondItem="Y9D-oL-pGp" secondAttribute="top" constant="5" id="ZzT-XB-Wlz"/>
                             <constraint firstAttribute="trailing" secondItem="Lte-Px-0Zz" secondAttribute="trailing" constant="5" id="diZ-Q7-ClQ"/>
                             <constraint firstAttribute="trailing" secondItem="bLa-u9-kEC" secondAttribute="trailing" constant="10" id="hLY-df-Y0F"/>
+                            <constraint firstItem="Lte-Px-0Zz" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Y9D-oL-pGp" secondAttribute="leading" constant="5" id="hiO-Ca-14a"/>
                             <constraint firstAttribute="bottom" secondItem="Lte-Px-0Zz" secondAttribute="bottom" constant="5" id="mGA-xb-UjQ"/>
                             <constraint firstItem="bLa-u9-kEC" firstAttribute="leading" secondItem="Y9D-oL-pGp" secondAttribute="leading" constant="5" id="tmH-ci-O0F"/>
                         </constraints>
@@ -53,15 +54,15 @@
                     <constraint firstAttribute="bottom" secondItem="Y9D-oL-pGp" secondAttribute="bottom" constant="10" id="F9J-kU-tV6"/>
                     <constraint firstItem="Y9D-oL-pGp" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="VdV-dF-dV4"/>
                     <constraint firstItem="Y9D-oL-pGp" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="VfS-po-KL3"/>
-                    <constraint firstAttribute="trailing" secondItem="Y9D-oL-pGp" secondAttribute="trailing" constant="50" id="cL9-pM-3Gl"/>
+                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Y9D-oL-pGp" secondAttribute="trailing" constant="50" id="cL9-pM-3Gl"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <color key="backgroundColor" systemColor="systemGray4Color"/>
             <connections>
-                <outlet property="mainview" destination="Y9D-oL-pGp" id="zon-Db-T3p"/>
+                <outlet property="mainView" destination="Y9D-oL-pGp" id="zZk-ds-Xqd"/>
                 <outlet property="message" destination="bLa-u9-kEC" id="RNF-Bg-SMr"/>
-                <outlet property="message_time" destination="Lte-Px-0Zz" id="hYZ-Wq-L40"/>
+                <outlet property="messageTime" destination="Lte-Px-0Zz" id="CTc-Bs-N9c"/>
             </connections>
             <point key="canvasLocation" x="149.27536231884059" y="92.745535714285708"/>
         </tableViewCell>

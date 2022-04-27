@@ -11,113 +11,120 @@ import CoreData
 
 class DialogueListingViewController: UIViewController {
     
-    lazy var viewmodel : DialogueListViewModel = DialogueListViewModel()
+    lazy var viewModel : DialogueListViewModel = DialogueListViewModel()
     
-    static func LoadFromNib() -> UIViewController {
-        return DialogueListingViewController(nibName: "DialogueListingViewController", bundle: nil)
-    }
     
-    @IBOutlet weak var DialogueListingTable: UITableView!
+    @IBOutlet weak var dialogueListingTable: UITableView!
     
+    static func loadFromNib() -> UIViewController {
+            return DialogueListingViewController(nibName: "DialogueListingViewController", bundle: nil)
+        }
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        NavBarSetUp()
-        TableData()
-        BindData()
+        navBarSetUp()
+        tableData()
+        bindData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        viewmodel.FetchFromCoreData()
+        viewModel.FetchFromCoreData()
     }
-    func  BindData() {
-        viewmodel.fetchstatus.bind(listener: { responsed in
+    
+    func  bindData() {
+        viewModel.fetchstatus.bind(listener: { responsed in
             switch responsed {
             case true:
-                self.DialogueListingTable.reloadData()
+                self.dialogueListingTable.reloadData()
             case false:
                 return
             }
         })
         
     }
-
     
-    func alerterros (_ title:String,_ message : String){
+    func alertError (_ title:String,_ message : String){
             let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "ok", style: .default, handler: nil))
             self.present(alert, animated: true, completion: nil)
     }
-    func NavBarSetUp(){
+    
+    func navBarSetUp(){
         title = "CHATBOT"
         self.navigationController?.navigationBar.isHidden = false
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationController?.navigationBar.backgroundColor = UIColor(hexFromString: "8EDFFA")
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white,NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 25)]
-        self.navigationController?.navigationBar.barTintColor = UIColor.white
+        //self.navigationController?.navigationBar.barTintColor = UIColor.white
         self.navigationController?.navigationBar.tintColor = UIColor.black
-        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "plus"), style: .plain, target: self, action: #selector(AddBot))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "plus"), style: .plain, target: self, action: #selector(addBot))
     }
     
-    @objc func AddBot() {
-        //Variable to store alertTextField
+    @objc func addBot() {
         var textField = UITextField()
-        
+    
         let alert = UIAlertController(title: "Add Bot", message: "", preferredStyle: .alert)
         alert.view.subviews.first?.subviews.first?.subviews.first?.backgroundColor = UIColor.systemGray5
         
         alert.addTextField { alertTextField in
             alertTextField.placeholder = "Name"
-            
-            //Copy alertTextField in local variable to use in current block of code
             textField = alertTextField
         }
         
         let action = UIAlertAction(title: "Submit", style: .default) { action in
-            if ((textField.text?.isEmpty) != true) {
-                self.viewmodel.CheckExistenceOfBot(textField.text!){ num in
+            if ((textField.text?.isEmpty != true && textField.text!.ValidBotName()) ) {
+                self.viewModel.CheckExistenceOfBot(textField.text!){ num in
                     switch num{
                     case true:
-                        self.alerterros("Invalid Bot Name", "Bot Name already exist")
+                        self.alertError("Invalid Bot Name", "Bot Name already exist")
                     case false:
-                        self.viewmodel.SaveToCoreData(textField.text!)
+                        self.viewModel.SaveToCoreData(textField.text!)
                     }
                 }
             }
+            else{
+                self.alertError("Invalid Botname", "Bot name must have alphabets only. Numbers, special character and Whitespace are not allowed ")
+            }
+            
         }
         
         alert.addAction(action)
-        present(alert, animated: true, completion: nil)
+        present(alert, animated: true) {
+            let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.dismissAlertController))
+            alert.view.superview?.subviews[0].addGestureRecognizer(tapGesture)
+            
+        }
     }
-    
-}
+    @objc func dismissAlertController(){
+        self.dismiss(animated: true, completion: nil)
+    }}
 
 extension DialogueListingViewController: UITableViewDelegate, UITableViewDataSource{
     
-    func TableData() {
-        DialogueListingTable.delegate = self
-        DialogueListingTable.dataSource = self
-        DialogueListingTable.register(UINib(nibName: "DialogueListingTableViewCell", bundle: nil), forCellReuseIdentifier: "DialogueListingCell")
-        DialogueListingTable.tableFooterView = UIView(frame: .zero)    }
+    func tableData() {
+        dialogueListingTable.delegate = self
+        dialogueListingTable.dataSource = self
+        dialogueListingTable.register(UINib(nibName: "DialogueListingTableViewCell", bundle: nil), forCellReuseIdentifier: "DialogueListingCell")
+        dialogueListingTable.tableFooterView = UIView(frame: .zero)    }
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let todos = viewmodel.fetchedRC?.fetchedObjects else { return 0 }
-        return todos.count
+        guard let bots = viewModel.fetchedRC?.fetchedObjects else { return 0 }
+        return bots.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let todo = viewmodel.fetchedRC.object(at: IndexPath(row: indexPath.row, section: indexPath.section))
+        let bot = viewModel.fetchedRC.object(at: IndexPath(row: indexPath.row, section: indexPath.section))
         let cell = tableView.dequeueReusableCell(withIdentifier: "DialogueListingCell", for: indexPath) as! DialogueListingTableViewCell
-        
-        cell.UpdateCell(todo.name ?? "Bot", todo.newtext ?? "No Message", "\(Date().offset(from: todo.newdate!)) ago")
+        cell.UpdateCell(bot.name ?? "Bot", bot.newtext ?? "No Message", "\(Date().offset(from: bot.newdate!)) ago")
         return cell
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let todo = viewmodel.fetchedRC.object(at: IndexPath(row: indexPath.row, section: indexPath.section))
-        self.navigationController?.pushViewController(ChatViewController.LoadFromNib(todo.name!), animated: true)
+        let bot = viewModel.fetchedRC.object(at: IndexPath(row: indexPath.row, section: indexPath.section))
+        self.navigationController?.pushViewController(ChatViewController.loadFromNib(bot.name!), animated: true)
     }
     
 }

@@ -9,13 +9,13 @@ import UIKit
 
 class BotTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var mainview: UIView!
+    @IBOutlet weak var mainView: UIView!
     @IBOutlet weak var message: UILabel!
-    @IBOutlet weak var message_time: UILabel!
+    @IBOutlet weak var messageTime: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        setupView()
+        setUpView()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -24,12 +24,12 @@ class BotTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
  
-    func setupView() {
-        mainview.layer.cornerRadius = 7
+    func setUpView() {
+        mainView.layer.cornerRadius = 7
     }
     
-    func UpdateCell(_ m : String , _ t : String) {
+    func updateCell(_ m : String , _ t : String) {
         message.text = m
-        message_time.text = t
+        messageTime.text = t
     }
 }

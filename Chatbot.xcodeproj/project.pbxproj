@@ -19,8 +19,6 @@
 		9286B0FE2804A9AC00F53703 /* UserTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9286B0FC2804A9AC00F53703 /* UserTableViewCell.xib */; };
 		9286B1022804AEBE00F53703 /* BotTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9286B1002804AEBE00F53703 /* BotTableViewCell.swift */; };
 		9286B1032804AEBE00F53703 /* BotTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9286B1012804AEBE00F53703 /* BotTableViewCell.xib */; };
-		9286B1082804B13200F53703 /* AddBotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9286B1062804B13200F53703 /* AddBotViewController.swift */; };
-		9286B1092804B13200F53703 /* AddBotViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9286B1072804B13200F53703 /* AddBotViewController.xib */; };
 		9286B10C28054E4700F53703 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9286B10B28054E4700F53703 /* UIColor.swift */; };
 		9286B11028055EC400F53703 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9286B10E28055EC400F53703 /* ChatViewController.swift */; };
 		9286B11128055EC400F53703 /* ChatViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9286B10F28055EC400F53703 /* ChatViewController.xib */; };
@@ -33,6 +31,8 @@
 		92C453112808064000E53DBA /* DialogueListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C453102808064000E53DBA /* DialogueListViewModel.swift */; };
 		92C453132808081900E53DBA /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C453122808081900E53DBA /* Observable.swift */; };
 		92C4531528081AF000E53DBA /* ChatDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C4531428081AF000E53DBA /* ChatDetailViewModel.swift */; };
+		92C453952812AEAA00E53DBA /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C453942812AEAA00E53DBA /* String.swift */; };
+		92C453972812DBC300E53DBA /* UITextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C453962812DBC300E53DBA /* UITextView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,8 +50,6 @@
 		9286B0FC2804A9AC00F53703 /* UserTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserTableViewCell.xib; sourceTree = "<group>"; };
 		9286B1002804AEBE00F53703 /* BotTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BotTableViewCell.swift; sourceTree = "<group>"; };
 		9286B1012804AEBE00F53703 /* BotTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BotTableViewCell.xib; sourceTree = "<group>"; };
-		9286B1062804B13200F53703 /* AddBotViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBotViewController.swift; sourceTree = "<group>"; };
-		9286B1072804B13200F53703 /* AddBotViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddBotViewController.xib; sourceTree = "<group>"; };
 		9286B10B28054E4700F53703 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		9286B10E28055EC400F53703 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		9286B10F28055EC400F53703 /* ChatViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatViewController.xib; sourceTree = "<group>"; };
@@ -64,6 +62,8 @@
 		92C453102808064000E53DBA /* DialogueListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogueListViewModel.swift; sourceTree = "<group>"; };
 		92C453122808081900E53DBA /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		92C4531428081AF000E53DBA /* ChatDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatDetailViewModel.swift; sourceTree = "<group>"; };
+		92C453942812AEAA00E53DBA /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		92C453962812DBC300E53DBA /* UITextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -198,19 +198,9 @@
 		9286B1042804B0EB00F53703 /* Alerts */ = {
 			isa = PBXGroup;
 			children = (
-				9286B1052804B10700F53703 /* Add Bot */,
 			);
 			name = Alerts;
 			path = ..;
-			sourceTree = "<group>";
-		};
-		9286B1052804B10700F53703 /* Add Bot */ = {
-			isa = PBXGroup;
-			children = (
-				9286B1062804B13200F53703 /* AddBotViewController.swift */,
-				9286B1072804B13200F53703 /* AddBotViewController.xib */,
-			);
-			name = "Add Bot";
 			sourceTree = "<group>";
 		};
 		9286B10A28054E3400F53703 /* Extension */ = {
@@ -219,6 +209,8 @@
 				9286B10B28054E4700F53703 /* UIColor.swift */,
 				9286B1242806C51E00F53703 /* Date.swift */,
 				92C453122808081900E53DBA /* Observable.swift */,
+				92C453942812AEAA00E53DBA /* String.swift */,
+				92C453962812DBC300E53DBA /* UITextView.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -296,7 +288,6 @@
 				9286B0FE2804A9AC00F53703 /* UserTableViewCell.xib in Resources */,
 				9286B1032804AEBE00F53703 /* BotTableViewCell.xib in Resources */,
 				9286B11128055EC400F53703 /* ChatViewController.xib in Resources */,
-				9286B1092804B13200F53703 /* AddBotViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -307,9 +298,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92C453952812AEAA00E53DBA /* String.swift in Sources */,
 				9286B1022804AEBE00F53703 /* BotTableViewCell.swift in Sources */,
 				9286B1252806C51E00F53703 /* Date.swift in Sources */,
-				9286B1082804B13200F53703 /* AddBotViewController.swift in Sources */,
 				9286B0F12804580900F53703 /* DialogueListingViewController.swift in Sources */,
 				9286B10C28054E4700F53703 /* UIColor.swift in Sources */,
 				92C4530F2807DCCA00E53DBA /* ChatMessages+CoreDataProperties.swift in Sources */,
@@ -323,6 +314,7 @@
 				92C453132808081900E53DBA /* Observable.swift in Sources */,
 				9286B11028055EC400F53703 /* ChatViewController.swift in Sources */,
 				9286B0D7280451E700F53703 /* SceneDelegate.swift in Sources */,
+				92C453972812DBC300E53DBA /* UITextView.swift in Sources */,
 				92C4530E2807DCCA00E53DBA /* ChatMessages+CoreDataClass.swift in Sources */,
 				92B75B272806F18600B58B93 /* BotDetail+CoreDataProperties.swift in Sources */,
 			);

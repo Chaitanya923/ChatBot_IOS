@@ -39,12 +39,14 @@
                         </subviews>
                         <color key="backgroundColor" red="0.86274509803921573" green="0.97254901960784312" blue="0.77647058823529413" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="yjI-YM-2XM" firstAttribute="leading" secondItem="Ytl-um-gTc" secondAttribute="leading" constant="5" id="69X-5f-BU5"/>
                             <constraint firstItem="yjI-YM-2XM" firstAttribute="top" secondItem="iec-LH-siG" secondAttribute="bottom" constant="10" id="Cn0-GS-Z2Q"/>
-                            <constraint firstItem="iec-LH-siG" firstAttribute="top" secondItem="Ytl-um-gTc" secondAttribute="top" constant="5" id="GiL-f3-mqm"/>
+                            <constraint firstItem="iec-LH-siG" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Ytl-um-gTc" secondAttribute="top" constant="5" id="GiL-f3-mqm"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="yjI-YM-2XM" secondAttribute="trailing" constant="5" id="W1e-Sw-X3b"/>
                             <constraint firstAttribute="bottom" secondItem="yjI-YM-2XM" secondAttribute="bottom" constant="5" id="aZd-BP-fh4"/>
                             <constraint firstItem="iec-LH-siG" firstAttribute="leading" secondItem="Ytl-um-gTc" secondAttribute="leading" constant="5" id="enq-rD-ss1"/>
+                            <constraint firstAttribute="trailing" secondItem="iec-LH-siG" secondAttribute="trailing" constant="5" id="opV-oD-eB2"/>
                             <constraint firstAttribute="trailing" secondItem="iec-LH-siG" secondAttribute="trailing" constant="5" id="pNZ-CW-uwI"/>
+                            <constraint firstItem="yjI-YM-2XM" firstAttribute="leading" secondItem="iec-LH-siG" secondAttribute="leading" id="tGO-V6-3zz"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -52,15 +54,15 @@
                     <constraint firstAttribute="bottom" secondItem="Ytl-um-gTc" secondAttribute="bottom" constant="15" id="DA5-m6-B1T"/>
                     <constraint firstAttribute="trailing" secondItem="Ytl-um-gTc" secondAttribute="trailing" constant="10" id="Mx4-ER-ZPq"/>
                     <constraint firstItem="Ytl-um-gTc" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="pQM-Ro-pgM"/>
-                    <constraint firstItem="Ytl-um-gTc" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="50" id="zha-VI-gFW"/>
+                    <constraint firstItem="Ytl-um-gTc" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="50" id="zha-VI-gFW"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <color key="backgroundColor" systemColor="systemGray4Color"/>
             <connections>
-                <outlet property="mainview" destination="Ytl-um-gTc" id="2gU-o0-EAH"/>
+                <outlet property="mainView" destination="Ytl-um-gTc" id="sex-co-MgX"/>
                 <outlet property="message" destination="iec-LH-siG" id="cW3-B0-AZP"/>
-                <outlet property="message_time" destination="yjI-YM-2XM" id="kxU-4o-hmN"/>
+                <outlet property="messageTime" destination="yjI-YM-2XM" id="roB-W0-ccM"/>
             </connections>
             <point key="canvasLocation" x="121.0144927536232" y="97.767857142857139"/>
         </tableViewCell>

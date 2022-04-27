@@ -20,9 +20,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else {return }
         window = UIWindow(windowScene: windowScene)
 
-        
-        //if KeychainManagement().getAccessToken() == nil {
-        let mainView = DialogueListingViewController()
+        let mainView = DialogueListingViewController.loadFromNib()
             let nav = UINavigationController(rootViewController: mainView)
             window?.rootViewController = nav
             window?.makeKeyAndVisible()
